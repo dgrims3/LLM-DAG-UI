@@ -1,0 +1,83 @@
+.user-input-node {
+  background-color: #2d2d30;
+  border: 1px solid #3e3e42;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 300px;
+  max-width: 500px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.input-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3e3e42;
+}
+
+.input-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9d9d9d;
+}
+
+.user-input-node textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  background-color: #3c3c3c;
+  color: #cccccc;
+  border: 1px solid #3e3e42;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.user-input-node textarea:focus {
+  border-color: #4fc3f7;
+}
+
+.user-input-node textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.user-input-node textarea::placeholder {
+  color: #6e6e6e;
+}
+
+.submit-button {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #0e639c;
+  color: #cccccc;
+  border: 1px solid #1177bb;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #1177bb;
+  border-color: #1c8ad6;
+}
+
+.submit-button:active:not(:disabled) {
+  background-color: #0d5a91;
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
