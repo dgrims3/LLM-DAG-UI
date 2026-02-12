@@ -1,6 +1,6 @@
 import { getApiKey } from './apiKeyStorage';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 const DEFAULT_SYSTEM_PROMPT = `You are a helpful AI assistant having a conversation with a user.
 Pay careful attention to the full conversation history provided.

@@ -25,7 +25,7 @@ export default function LandingPage({ onApiKeySubmit }) {
 
     try {
       // Validate the API key by making a simple request through the proxy
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const apiUrl = import.meta.env.VITE_API_URL || '';
       const response = await fetch(`${apiUrl}/api/messages`, {
         method: 'POST',
         headers: {
