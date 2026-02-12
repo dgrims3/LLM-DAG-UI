@@ -2,6 +2,10 @@
 
 A UI wrapper for Claude which displays the conversation as a directed acyclic graph, allowing the user to "branch off" from conversation nodes.
 
+**Try it out:** [llm-dag-ui.vercel.app](https://llm-dag-ui.vercel.app/)
+
+![Screenshot of LLM-DAG-UI showing a branching conversation about vacation destinations](screenshot.png)
+
 ## Features
 
 - **Branching Conversations** — Drag from any message node to create a new conversation branch
@@ -95,23 +99,23 @@ npm run preview
 
 ## Deployment
 
-### Frontend (Vercel / Netlify / etc.)
+### Vercel (recommended)
 
-1. Build the frontend: `npm run build`
-2. Deploy the `dist` folder
-3. Set `VITE_API_URL` to your backend URL
+The app deploys as a single Vercel project — the frontend is static and the proxy runs as a serverless function (`api/messages.js`).
 
-### Backend (Railway / Render / Fly.io / etc.)
+1. Push to GitHub and import the repo on [vercel.com](https://vercel.com)
+2. Set the `MODEL_NAME` environment variable (e.g. `claude-3-5-haiku-20241022`)
+3. Deploy — no other configuration needed
 
-1. Deploy `server.js` and `package.json`
-2. Set environment variables:
-   - `CORS_ORIGIN` — Your frontend URL
-   - `MODEL_NAME` — Desired Claude model
+### Self-hosted
 
-## Security Notes
+1. Deploy `server.js` and `package.json` to any Node.js host
+2. Build the frontend (`npm run build`) and serve the `dist` folder
+3. Set `VITE_API_URL` to your backend URL and `CORS_ORIGIN` to your frontend URL
 
-- API keys are stored in browser `localStorage` and sent to the proxy server per-request
-- The proxy server does not log or store API keys
+## Security & Privacy
+
+- **Your API key never leaves your browser** — it is stored in `localStorage` and sent directly with each request. The server never logs or stores it.
 - CORS is restricted to configured origins
 - Users should only enter their API key on trusted deployments
 
